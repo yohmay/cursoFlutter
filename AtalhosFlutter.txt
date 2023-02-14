@@ -1,0 +1,55 @@
+IntelliJ - Emulador (Windows)
+VSCode - Emulador Externo (Windows)
+XCode - (macOS)
+Android Studio (Windows)
+
+
+FlutLab - https://flutlab.io/
+FlutterFlow - https://flutterflow.io/
+https://flutter.dev/
+Noção de espaço - Artigo
+https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2.
+https://www.figma.com/ - Ferramenta para design.
+https://docs.flutter.dev/development/ui/widgets/scrolling - Link com todos os Widget Scrolláveis.
+https://docs.flutter.dev/development/ui/widgets/scrolling - Link com todos os Widget Scrolláveis.
+https://medium.com/@lucased78/o-incompreendido-inheritedwidget-4a52c5a1d45f - Para saber mais: Inherited Widget.
+https://api.flutter.dev/flutter/widgets/Image-class.html - Lendo a documentação referente as imagens.
+https://www.alura.com.br/artigos/o-que-e-o-operador-ternario - Para saber mais: operações ternárias.
+https://drive.google.com/drive/folders/1TdIGtyHbKtOIxwIGOV0kIbcsCBirGvbh - Imagens utilizadas durante o projeto.
+
+
+Stack - Permite sobrepor diversos widgets uns aos outros e ordena de baixo para cima.
+color: Colors. - Mostra uma diversas opções de cores para background.
+alignment: AlignmentDirectional. - Alinhamento dos childrens que serão definidos dentro da Stack.
+mainAxisAlignment - Eixo Y principal de alinhamento dos widgets.
+crossAxisAlignment - Eixo X principal de alinhamento dos widgets.
+text('') - Para um widget que será possível introduzir Strings, possuindo diversas propriedades como estilo, tamanho entre outras.
+ElevatedButton - Botão padronizado do flutter, contendo:
+    onPressed - Função que executará após pressionar o botão.
+    child - Herdeiros Widgets.
+Icon(Icons.) - Determina diversos tipos de estilo de ícones para botões. 
+AppBar - Proporciona um lugar consistente na parte superior da janela do App, podendo introduzir um campo de texto.
+Floating Action Button - Um botão de ação flutuante, sendo circular que aciona a ação principal na IU do APP.
+Stateless Widgets - É um widget que poderá ser modelado e reutilizado, sendo um widget estático.
+ListView - Visualização em lista, sendo um widget que a exibição terá uma rolagem vertical, onde cada exibição é posicionada
+imediatamente abaixo da exibição anterior na lista.
+Overflow - Propriedade que faz a limitação do texto contendo diversas maneiras.
+linearProgressIndicator - Widget já pré definido que significa uma indicador de progresso linear, possui diversos parâmetros como cor,
+valor, background, entre outros.
+lados de um widget.
+EdgeInsets.all - É um conjunto imutável de deslocamentos nas quatro direções, normalmente utilizado para um deslocamento de cada um dos 
+lados de um widget.
+Asset - O arquivo da imagem está dentro do projeto.
+Network - O arquivo de imagem está na web, sendo citado através de uma URL.
+File - A imagem está dentro de algum dispositivo.
+Memory - É executado uma imagem que estará na memória do dispositivo.
+Image.network - Traz uma imagem diretamente dentro da web, contendo diversos parâmetros, sendo o src o mais importante.
+decoration - Parâmetro que é possível decorar com bordas, raio da borda, cores e etc..
+opacity - É infomado um valor double indicando a opacidade dos widgets.
+duration - Duração da animação, solicitando um widget Duration, que poderá ser definido, dias, horas, minutos, segundos...
+Hot Reaload - É o botão de carregamento mais rápido e leve, apenas da área onde está sendo trabalhada.
+Hot Restart -  É o botão de carregamento da aplicação completa, utilizado quando é feito widgets pesados.
+build() - Método que facilita a recriação da tela.
+ARGB - Alpha Red Green e Blue.
+Ctrl+Alt+Shift+L - Para ajuste do código.
+Alt+Enter - Seleciona o widget e envolve o mesmo em diversos tipos.

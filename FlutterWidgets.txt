@@ -1,0 +1,479 @@
+Flutter: Widgets, Stateless, Stateful, Imagens e Animações:
+
+O que é o Flutter?
+ 
+- História dos Celulares e Smartphones.
+. 1980 - Os primeiros celulares foram lançados.
+. 2000 - Primeiros Smartphones.
+. 2008 - Criação da App Store.
+. 2009 - Criação do Android.
+
+- Sistemas Operacionais.
+. Android 
+Criado em 2009.
+Líder do Mercado.
+
+. iOS
+Criado emm 2008.
+26,75% do Mercado.
+  
+- Propósito do Flutter.
+. Unificação entre os sitemas operacionais de dispositivos móveis.
+. Um código para todos os dominar, então ao criar um único código para dispositivos Android e iOS.
+. É utilizado a linguagem Dart, sendo uma linguagem simples, possuindo uma documentão acessível e pratica.
+. O Flutter também possui uma boa documentação será utilizado durando o curso.
+. O flutter possui multiplataforma, realizando sites da web, e aplicações para desktop.
+
+- O que é um framework?
+. Ferramenta que auxilia em códigos prontos. Possuindo classes estruturadas.
+. No caso do flutter esses códigos prontos serão em Dart.
+. Flutter não é recomendado para utilizar em uma única atividade. 
+
+- Onde programar?
+. Ambienete de Desenvolvimento Integrado - Integrated Development Environment
+. IDEs Utilizadas
+IntelliJ - Emulador (Windows)
+VSCode - Emulador Externo (Windows)
+XCode - (macOS)
+Android Studio (Windows)
+. No curso será utilizado o Android Studio.
+
+. Ferramentas online
+FlutLab - https://flutlab.io/
+FlutterFlow - https://flutterflow.io/
+
+- Android Studio.
+. Instalando a IDE Android Studio, focando na linguagem Dart.
+. Versão utilizada Android Studio Bumblebee | 2021.1.1 Patch 3.
+. Create device, para criação de modelos de dispositivos móveis para utilizar no emulador
+. Utilizando o dispositivo Pixel 3a versão S do sistema android para o emulador
+
+- Instalando o Flutter.
+https://flutter.dev/
+. Será utilizado a versão 3.0.1 SDK.
+. Após a instalação será necessário realizar o update no path.
+. Para habilitar o uso dos comandos do flutter no sistema dentro do Prompt de Comando, devemos atualizar o PATH no windows. Editar as variáveis de ambiente do sistema,
+localizado na parte superior à direita da nova janela e adicione o caminho onde foi salvo o SDK do Flutter. Lembrando que será selecionada a pasta 
+bin dentro da pasta do flutter. 
+. No terminal será necessário confirmar as instalações que foram efetuadas vinculando o Flutter no Android Studio,
+para isso basta inserir flutter doctor no prompt de comando.
+. Será necessário aceitar as licenças do Android. Dentro do prompt de comando, inserir flutter doctor --android-licenses.
+
+- Criando nosso projeto.
+. Baixando os plugins do Dart e Flutter.
+. Será criado um novo projeto e definindo o projeto em FLutter.
+. Definindo o caminho de pasta que será salvo o projeto.
+. Será aberto uma configuração do projeto, onde é possível definir o nome, a pasta onde estará o projeto, descrição,
+tipo do projeto, domínio, liguagem do android e iOS e plataformas que estarão disponíveis.
+. Após definir essas configurações o projeto estará pronto para desenvolvimento.
+. Dentro da pasta lib do projeto será utilizado o arquivo main.dart.
+. Abrindo o emulador criado nas aulas anteriores.
+. Executando o código descrito no arquivo main.dart.
+
+O que são Widgets?
+
+. É a base do Flutter.
+. Possuindo diversos parâmetros e métodos para serem utilizados.
+. Com widgets é possível criar conexões diretas com parent <-> child.
+. Em relação aos parâmetros é possível definir tamanhos, cores.
+
+- Container e Stack.
+. Limpando o arquivo template criado, retirando 
+. Alterando o home, sendo um objeto container
+. Clicando no botão Hot Reload, para restartar a aplicação
+. Dentro do objeto container criado na home, será alterado a cor com a propriedade color.
+color: Colors. - Mostra uma diversas opções de cores para background.
+Stack - Permite sobrepor diversos widgets uns aos outros e ordena de baixo para cima.
+. Serão criados childrens dentro de um stack, na home, e será definida tamanho e cores para os widgets
+alignment: AlignmentDirectional. - Alinhamento dos childrens que serão definidos dentro da Stack.
+
+- Column e Row.
+. Copiando para uma outra área o código utilizado na aula anterior.
+Stack(
+    alignment: AlignmentDirectional.center,
+        children: [
+            Container(color: Colors.black12,width: 100,height: 100,),
+            Container(color: Colors.white24,width: 50,height: 50,),
+        ]
+),
+. Utilizando Column que fará com que os widgets sejam organizados um ao lado do outro. 
+mainAxisAlignment - Eixo Y principal de alinhamento dos widgets.
+crossAxisAlignment - Eixo X principal de alinhamento dos widgets.
+
+Exemplo com Column:
+Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+        Container(color: Colors.blueGrey,width: 100,height: 100,),
+        Container(color: Colors.white24,width: 50,height: 50,),
+    ],
+),
+
+. Utilizando o Row (linha), e definindo os childrens widgets.
+. Será definido as mesmas posições trabalhadas na aula anterior utilizando mainAxisAlignment e crossAxisAlignment.
+
+Exemplo com Row:
+Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+        Container(color: Colors.blueGrey,width: 100,height: 100,),
+        Container(color: Colors.white24,width: 50,height: 50,),
+    ],
+),
+
+. Criando um código utilizando o que foi visto durante a aula, como: Column, Row e Stack, alinhamentos Main e Cross AxisAlignment.
+Código:
+home: Column(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Container(color: Colors.blue, width: 100, height: 100,),
+              Container(color: Colors.red, width: 50, height: 50,),
+            ],
+          ),
+          Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Container(color: Colors.green, width: 100, height: 100,),
+              Container(color: Colors.yellow, width: 50, height: 50,),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(color: Colors.cyan,height: 50,width: 50,),
+              Container(color: Colors.pinkAccent,height: 50,width: 50,),
+              Container(color: Colors.purple,height: 50,width: 50,)
+            ],
+          ),
+        ],
+      ), 
+    );
+
+- Text e ElevatedButton.
+. Definindo a cor do background do projeto.
+Alt+Enter - Seleciona o widget e envolve o mesmo em diversos tipos.
+. Será colocado o Column com relação a um container, definindo uma cor.
+text('') - Para um widget que será possível introduzir Strings, possuindo diversas propriedades como estilo, tamanho entre outras.
+Ctrl+Alt+L - Para ajuste do código.
+ElevatedButton - Botão padronizado do flutter, contendo:
+    onPressed - Função que executará após pressionar o botão.
+    child - Herdeiros Widgets.
+. Definindo um botão com uma mensagem ao pressioná-lo.
+
+Código criado na aula:
+
+    home: Container(
+        color: Colors.white24,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                Container(color: Colors.blue, width: 100, height: 100,),
+                Container(color: Colors.red, width: 50, height: 50,),
+              ],
+            ),
+            Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                Container(color: Colors.green, width: 100, height: 100,),
+                Container(color: Colors.yellow, width: 50, height: 50,),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(color: Colors.cyan, height: 50, width: 50,),
+                Container(color: Colors.pinkAccent, height: 50, width: 50,),
+                Container(color: Colors.purple, height: 50, width: 50,)
+              ],
+            ),
+            Container(color: Colors.amber, height: 30, width: 300,
+              child: Text(
+                'Diamante Amarelo',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ElevatedButton(onPressed: () {
+              print('Você apertou o Botão');
+            },
+                child: Text('Aperte o botão'),
+            ),
+          ],
+        ),
+      ),
+    );
+
+- Desafio: 
+Crie alguns Containers;
+Dê cores distintas para cada um deles;
+Use e abuse do parâmetro child para dar formato à sua tela.
+
+Resultado pasta: C:\Users\yohana.ortega\alura_desafios
+
+- Overflow e Árvore de Widgets.
+. Como alinhar os widget para não ultrapassar a rendererização nos dispositivos criados.
+. Quando é definido um widget dentro de uma row, não é limitado o tamanho, sendo possível criar uma linha infinita.
+. Assim como um widget definido em Column, mas no momento não é viável pois estamos atuando com telas estáticas.
+. Então declarando valores do widget acima do que é previsto para rendererização da tela ocorrerá o Overflow.
+. Flutter Inspector - Ferramenta que mostra a árvore de widgets e todos os componentes criados em ordem, mostrando os detalhes de cada elemento.
+
+- Para saber mais: noção de espaço - Artigo
+https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2.
+
+- Material ou Cupertino? 
+. Flutter possui diversos modelos pré definidos de design, para criação de projetos.
+Material Design - Padrão visual de design do flutter. 
+Criado pela Google, possui diversos tipos de cores e formatos prontos, alinhamento e espaçamentos pré definidos.
+Possuindo um design adaptável contendo um material components widgets como:
+Estrutura           Botões
+Selecionáveis       Painéis
+Displays            Layouts
+
+Cupertino Design - Padão de design para dispositivos Apple.
+Criado pela Apple, com cores e formatos padronizados.
+Funções e Animações definidas como devem ser.
+Cupertino (iOS-Style) Widgets possui alguns design de widgets como:
+Transições          Botões          Selecionáveis     
+
+- Cores.
+. É possível definir cores no Flutter a partir de um selecior ARGB juntamente com RGB.
+ARGB - Alpha Red Green e Blue.
+
+Projeto da aula anterior.
+. Arquivo em zip do conteúdo visto até o momento.
+ 
+- Novo Widget: Scaffold.
+https://www.figma.com/ - Ferramenta para design.
+. Será feito um projeto de uma tela que será um organizador de tarefas. 
+. Utilizando o novo widget Scaffold, para utilizá-lo é necessário acrescentar alguns parâmetros.
+AppBar - Proporciona um lugar consistente na parte superior da janela do App, podendo introduzir um campo de texto.
+Floating Action Button - Um botão de ação flutuante, sendo circular que aciona a ação principal na IU do APP.
+
+- Material de apoio: Design - Organizador de tarefas. 
+https://www.figma.com/file/CNugKAFpmpYkx4gutN9dCQ/2555---Flutter%3A-Crie-seu-primeiro-App?node-id=0%3A1 
+. Link disponibilizado no curso
+
+- Implementando o Layout.
+. Iniciando o projeto de Tarefas.
+. Definindo a mensagem no AppBar.
+. No body do projeto será alterado a cor do background e definido os widgets que possuem no projeto.
+. Criando Containers com stacks e row, e alinhando os mesmos. 
+. Inserindo o texto e o botão relacionado ao projeto.
+Icon(Icons.) - Determina diversos tipos de estilo de ícones para botões. 
+
+- Stateless Widget.
+. Repetindo o layout realizado na aula anterior, em uma coluna com vários widgets para continuação do projeto.
+. Para fazer de uma forma mais limpa sem copiar e colar o código do container é possível criar um widget proprio. Criar
+uma classe que recebe o layout e é apenas chamado como se fosse um Widget do catálogo.
+. Para isso, ao final do código é inserido o Stateless.
+. Dentro do novo widget criado será inserido o código que estava sendo criado no widget acima.
+. No body será feito um wrap with column, e será definindo o alinhamento com o mainAxisAlignment.
+. Dentro de children será introduzido quantas task forem necessárias para complementar o projeto.
+. Para colocar textos distintos nos widgtes é necessário alterar alguns parâmetros.
+. Abaixo da class Task será introduzido: final String nome; . Sendo um parâmetro que deverá ser mencionado no widget criado,
+a partir do this. 
+. Então toda vez que for utilizada a class Task, será solicitado uma String.
+. E no Text será passado o parâmetro que foi criado.
+Stateless Widgets - É um widget que poderá ser modelado e reutilizado, sendo um widget estático.
+
+- ListView e Padding.
+. Quando é inserido diversos widget, pode ultrapassar o limite da tela que está sendo renderizado.
+. Para isso é introduzido um novo widget, para que a tela tenha um tamanho maior, e permita a ação de mover conhecido como 
+scroll
+. No body do arquivo será alterado a Column pelo widget ListView.
+ListView - Visualização em lista, sendo um widget que a exibição terá uma rolagem vertical, onde cada exibição é posicionada
+imediatamente abaixo da exibição anterior na lista.
+. Não possui mainAxisAlignment.
+. Possui parâmetros que permitem diversos tipos de scroll.
+. Para criar espaços entre um widget e outro é utilizado padding.
+. No return do widget Task será feito um wrap with padding e será introduzido o padding, dando espaço nos objetos criados.
+. No campo Text é possível definir estilos, fontes e diversas propriedades para melhoria do texto visível.
+. Para não ocorrer Overflow com os textos escritos, o recomendado é fazer um wrap with container. 
+Overflow - Propriedade que faz a limitação do texto contendo diversas maneiras.
+https://docs.flutter.dev/development/ui/widgets/scrolling - Link com todos os Widget Scrolláveis.
+
+- Stateful Widget e setState.
+. Será criado um botão, para aumentar uma barra de progresso, utilizando funções.
+. Container wrap with Column, com o container que representa os widgets que recebem as task, para inserir um campo de
+texto nos widgets.
+. Inserindo o texto com Text.
+. Após o @override antes do return do Padding será inserido uma variáveis int.
+. Será nomeada e introduzido um valor, e dentro do Text será chamado a variável criada.
+. O foco é que ao clicar no botão será acrescentado o valor no texto informado, para isso basta inserir no
+onPressed dentro das chaves, acrescendo ++.
+. Mas ao realizar todos os procedimentos, como o widget é um Stateless, o widget acaba sendo estático. 
+. Então será atualizado com Alt+Enter para um Stateful Widget que permite a atualização constante sem ter que restartar
+a aplicação.
+. Possui uma nova classe que monitora as atualizações e redesenha a tela de criação.
+. Retornando ao botão, dentro de onPressed será inserido a função:
+setState(() {}); - Função que informa o widget a alteração.
+
+- Novo Widget: linearProgressIndicator.
+. Incluindo barra de progresso.
+linearProgressIndicator - Widget já pré definido que significa uma indicador de progresso linear, possui diversos parâmetros como cor,
+valor, background, entre outros.
+. No widget de Text será feito um wrap with a row para criação de uma nova linha.
+. Será definido a cor e o valor sendo a variável criada / até quanto será possível preencher.
+. Também definido os tamanhos e proporções para o design com MainAxisAlignment e o wrap with padding.
+EdgeInsets.all - É um conjunto imutável de deslocamentos nas quatro direções, normalmente utilizado para um deslocamento de cada um dos 
+lados de um widget.
+
+- Desafio - Widget Customizado.
+
+- Hot Reaload e Hot Restart.
+. Difereça entre os botões de carregamento.
+Hot Reaload - É o botão de carregamento mais rápido e leve, apenas da área onde está sendo trabalhada.
+Hot Restart -  É o botão de carregamento da aplicação completa, utilizado quando é feito widgets pesados.
+build() - Método que facilita a recriação da tela.
+. Inserindo alguns detalhes no botão e nos widgets.
+
+- Para saber mais: Inherited Widget.
+Artigo para Leitura - https://medium.com/@lucased78/o-incompreendido-inheritedwidget-4a52c5a1d45f
+
+Projeto da aula anterior.
+. Arquivo em zip do conteúdo visto até o momento.
+
+- Novo Widget: Image.
+. Adicionando imagens nos widgets cinzas.
+https://api.flutter.dev/flutter/widgets/Image-class.html - Lendo a documentação referente as imagens.
+. No Flutter é possível inserir quatro tipos básicos, sendo:
+Asset - O arquivo da imagem está dentro do projeto.
+Network - O arquivo de imagem está na web, sendo citado através de uma URL.
+File - A imagem está dentro de algum dispositivo.
+Memory - É executado uma imagem que estará na memória do dispositivo.
+. Será utilizado o método network.
+. Dentro do container cinza criado nas aulas anteriores, será acrescentado um child contendo Image.Network
+Image.network - Traz uma imagem diretamente dentro da web, contendo diversos parâmetros, sendo o src o mais importante.
+. Para redimensionar a imagem para o tamanho do widget é possível alterar com o parêmetro fit, o mesmo possuí diversos 
+valores e dimensões.
+. Para que cada widget possua uma imagem diferente, é possível criar uma variável como foi realizado para o nome.
+
+- Preparando o ambiente: Imagens do App.
+. Disponível as imagens utilizadas no curso.
+
+- Adicionando dificuldade na Tarefa.
+. Incluíndo as estrelas que simbolizam a dificuldade nas tarefas. Para isso no widget de texto será introduzido o wrap
+with column.
+. Definindo o mainAxisAlignment e o crossAxisAlignment.
+. Após o texto será criado uma row, contendo Icons, sendo definido os Incons.star.
+. Será defido o tamanho e a cor necessárias de acordo com o esboço do projeto.
+
+- Condição de dificuldade.
+. Definindo a lógica da dificuldade, pois cada uma das tarefas possuirá dificuldades destintas.
+. Será criado uma condição, acrecentando acima da const Task, que retorna todos os elementos criados.
+. Definindo as dificuldades nas tasks.
+. Para alterar a cor de acordo com o valor da dificuldade na Task, será introduzido uma operação condicional ternária,
+verificando o tamanho do widget de dificuldade.
+. Introduzindo com a cor conforme o valor da dificuldade é estabelecida.
+. No botão de progresso, será feita uma verificação no valor, dividindo o nível pela dificuldade, então quanto maior a
+dificuldade mais níveis terá.
+
+- Para saber mais: operações ternárias.
+. Link com Artigo: https://www.alura.com.br/artigos/o-que-e-o-operador-ternario
+
+- Novo Widget: BoxDecoration.
+. Definindo as bordas e decoração dos Widgets.
+. Utilizando o parâmetro dentro do container doo widget azul.
+decoration - Parâmetro que é possível decorar com bordas, raio da borda, cores e etc..
+. Será definido junto com a opção borderRadius, definindo como BorderRadius.circular.
+
+- Faça como eu fiz: o retorno do Widget.
+Desafio: 
+. Criação uma decoração para o Widget que foi realizado no desafio passado.
+. Insira algumas bordas.
+. Insira imagens dentro do Widget.
+
+- Novo Widget: AnimatedOpacity.
+. Inserindo uma nova funcionalidade no projeto, sendo uma função que esconderá as tarefas da tela.
+. Utilizando o FloatingActionButton, que foi inserido no início do projeto para 
+. Criando um widget AnimatedOpacity.
+. No ListView será feito um wrap with widget, e alterando o nome para AnimatedOpacity.
+. AnimatedOpacity é um widget que precisa de dois parâmetros obrigatórios, sendo o opacity e duration.
+opacity - É infomado um valor double indicando a opacidade dos widgets.
+duration - Duração da animação, solicitando um widget Duration, que poderá ser definido, dias, horas, minutos, segundos...
+. Criando uma nova variável para armazenar o valor da opacidade que será efetuada ao clicar no botão, declarando a variável 
+em bool.
+. O parâmetro opacity não recebe valores booleanos, então será introduzida uma condição ternária.
+. Inserindo a opacidade e a condição booleana no FloatingActionButton.
+
+- Para saber mais: Mais animações!
+. Link com Artigo: https://acervolima.com/flutter-trabalhando-com-animacoes/
+
+Projeto da aula anterior.
+. Arquivo em zip do conteúdo visto até o momento.
+
+- O que é refatoração?
+. O código está muito acumulado em um arquivo só, fazendo com que fique desorganizado para outras pessoas entenderem.
+. É necessário criar um arquivo para cada responsabilidade, verificando o código main.dart. 
+. No arquivo main.dart possui a função void main() e MyApp, que possui suas responsabilidades.
+. E dentro do MyApp() contém o Scaffold que é toda a tela desenvolvida.
+. Também tem o Task(), sendo StatefulWidget, completo e o state que o mesmo precisa.
+. E assim para cada parte do código que possui sua responsabilidade. 
+. Será criado um arquivo para cada código desenvolvido durante o curso, alterando a classe e o retorno dela.
+. Incluindo uma biblioteca de modelos pré definidos de acordo com a utilização ou escolha para cada projeto. 
+
+- Para saber mais: Temas e Cores.
+. Link com Artigo: https://www.alura.com.br/artigos/flutter-temas-cores
+
+- Refatorando Difficulty.
+. Removendo as importações dos arquivos dos códigos desenvolvidos.
+. Recapítulando a responsabilidade do arquivo principal main.dart. Sendo o arquivo referente ao Projeto Tarefas.
+. MyApp() - Sendo responsável pelo MaterialApp() e os designs
+. Scaffold() - Responsável pela tela criada, sendo possível desenvolve-la
+. Task() - Widget criada para cada tarefa.
+. Row() - Widget criado para as dificuldades das tarefas. 
+. Para refatorar o arquivo o indicador é iniciar a partir da menor dificuldade que o mesmo possui, sendo a Row().
+. Clicando para minimizar os códigos da Row com o mouse direito na opção Refactor, será escolhido a opção Extract Flutter Widget.
+. Será transformado todo o código em um novo widget, definindo um nome para o widget.
+. Limpando o StatelessWidget e criando uma variável difficultyLevel, e alterando para cada Icon star declarado.
+. Copiando o novo widget e inserindo em um novo arquivo dart, e no arquivo principal será importado esse novo arquivo criado.
+
+- Refatorando Task e Tela.
+. Agora será refatorado a class Task, inserindo o código em um novo arquivo.
+. Importando a biblioteca Material e o arquivo Difficulty, e importando para o arquivo main.dart.
+. No arquivo main.dart é necessário deletar a importação para o arquivo Difficulty, pois o mesmo está sendo importado no arquivo 
+Task.
+. Refatorando class Scaffold, referente a tela.
+
+- Warnings.
+. No arquivo main.dart será alterado o Stateful para StatelessWidget.
+. Criando pastas e encaminhando os widgets criados referente a componentes para tela inicial.
+. Declarando as class como constantes, e ajustando os warnings informados, e confirmando em todos os códigos as imposições do warning.
+
+- Assets.
+. Inserindo um widget SizedBox, após a última Task declarada o mesmo possui apenas parâmetros para height, width e child.
+. Definindo a proporção do height, e inserindo as imagens disponibilizadas no curso.
+. Será criado um directory dentro da pasta do projeto, para carregar as imagens do projeto.
+. Baixando e inserindo as imagens dentro da directory criada.
+. Será utilizado o arquivo pubspec.yaml.
+pubspec.yaml - É um arquivo que pode ser mencionado para o projeto, que possui coisas novas a serem implementadas.
+. Será mencionado a pasta Assets e a pasta Assets/images/ para reconhecimento de todas as imagens que a pasta contém.
+
+- Preparando o ambiente: Imagens do App.
+. Disponível as imagens utilizadas no curso.
+https://drive.google.com/drive/folders/1TdIGtyHbKtOIxwIGOV0kIbcsCBirGvbh
+
+- Projeto final do Curso.
+. Arquivo em zip com o projeto desenvolvido.
+
+- Desafio Final.
+. Quando a tarefa chegar ao nível máximo a tarefa deverá mudar de cor.
+
+- Faça como eu fiz.
+. Realize todos os passos realizados durante o curso, incluindo atividades e desafios.
+
+- Conclusão.

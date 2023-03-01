@@ -1,14 +1,15 @@
 Flutter: Widgets, Stateless, Stateful, Imagens e Animações:
 
-O que é o Flutter?
- 
-- História dos Celulares e Smartphones.
+01. Flutter e Android Studio.
+
+- O que é o Flutter?
+ História dos Celulares e Smartphones.
 . 1980 - Os primeiros celulares foram lançados.
 . 2000 - Primeiros Smartphones.
 . 2008 - Criação da App Store.
 . 2009 - Criação do Android.
 
-- Sistemas Operacionais.
+ Sistemas Operacionais.
 . Android 
 Criado em 2009.
 Líder do Mercado.
@@ -70,8 +71,9 @@ tipo do projeto, domínio, liguagem do android e iOS e plataformas que estarão 
 . Abrindo o emulador criado nas aulas anteriores.
 . Executando o código descrito no arquivo main.dart.
 
-O que são Widgets?
+02. Widgets.
 
+- O que são Widgets?
 . É a base do Flutter.
 . Possuindo diversos parâmetros e métodos para serem utilizados.
 . Com widgets é possível criar conexões diretas com parent <-> child.
@@ -255,7 +257,9 @@ ARGB - Alpha Red Green e Blue.
 
 Projeto da aula anterior.
 . Arquivo em zip do conteúdo visto até o momento.
- 
+
+03. Stateless vs Stateful.
+
 - Novo Widget: Scaffold.
 https://www.figma.com/ - Ferramenta para design.
 . Será feito um projeto de uma tela que será um organizador de tarefas. 
@@ -347,6 +351,8 @@ Artigo para Leitura - https://medium.com/@lucased78/o-incompreendido-inheritedwi
 Projeto da aula anterior.
 . Arquivo em zip do conteúdo visto até o momento.
 
+04. Imagens e Animações.
+
 - Novo Widget: Image.
 . Adicionando imagens nos widgets cinzas.
 https://api.flutter.dev/flutter/widgets/Image-class.html - Lendo a documentação referente as imagens.
@@ -415,6 +421,8 @@ em bool.
 
 Projeto da aula anterior.
 . Arquivo em zip do conteúdo visto até o momento.
+
+05. Boas Práticas. 
 
 - O que é refatoração?
 . O código está muito acumulado em um arquivo só, fazendo com que fique desorganizado para outras pessoas entenderem.

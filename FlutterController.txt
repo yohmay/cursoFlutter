@@ -1,0 +1,179 @@
+Flutter: Controller, Navegação e Estados:
+
+01. Formulário 
+
+- Apresentação.
+. Continuação do projeto de tarefas gamificadas, onde será possível adicionar uma nova tarefa, um nível, e inserir uma 
+imagem.
+
+- Preparando o ambiente: baixando o projeto inicial.
+. Será disponibilizado os arquivos do curso anterior em zip.
+
+- Como será nosso Formulário?
+. Analisando a tela do projeto, e verificando os itens que a mesma possui. 
+. Será utilizada a mesma pasta do projeto anterior, e dentro da pasta screens, será criado um novo arquivo dart, que será 
+utilizada nesse novo projeto.
+. Adicionando um Stateful Widget e definindo o modelo pré definido. 
+. Na main.dart, será inserido o FormScreen na home, para visualização do projeto.
+. Retornando no arquivo formscreen.dart será definido os widgets conforme foi visto no projeto.
+. Ao utilizar o wrap with center o widget Container se torna centralizado.
+
+- TextField ou TextFormField?
+. Após definir alguns widgets, no momento será criado novos elementos, onde será possível digitar.
+https://docs.flutter.dev/cookbook/forms/text-input - Documentação referente ao widget de campo de texto.
+. O TextFormField possui um parâmetro que o TextField não possui, sendo uma validação, podendo validar a informação que entra 
+no campo, podendo ser um texto, números. 
+Obs: Caso possua diversas validações no widget do tipo form, será procurado todas as validações do TextFormField antes de permitir 
+que seja criado uma nova tarefa.
+. Será inserido o TextFormField no widget do projeto, e definido alguns parâmetros de design, envolvendo o mesmo em um padding.
+
+- Controller.
+. Parâmetro do TextFormField, que é utilizado para controlar o texto que está sendo editado.
+. Para isso é necessário criar um TextEditingController e definindo um nome de uma variável após o State do FormScreen.
+. Mencionando o mesmo no parâmetro de controle.
+. Criando um ElevatedButton para adicionar a tarefa.
+. Criando também novos widgets TextFormField, para inserir a dificuldade e a URL da imagem. Definindo os controles para os repectivos widgets criados.
+
+- Para saber mais: Cursos de Formulários.
+https://cursos.alura.com.br/course/flutter-criacao-validacao-formularios-aumentar-conversoes - Curso de Formulários com Flutter Alura.
+
+- Imagem em tempo real.
+. Inserindo um widget para a imagem que for inserida através do campo do TextFormField.
+. Definindo seus parâmetros de design para o card que receberá a imagem, e definindo como child o controle criado para imagem.
+. Ocorrerá um Erro para o carregamento da imagem, para isso será necessário inserir no padding do TextFormField referente da imagem o onChanged.
+. E informar o setState para recarregar caso seja inserido uma imagem.
+
+- ErroBuilder
+. Erros e exceções que ocorrem no flutter.
+. A função errorBuilder constrói uma saída, para caso ocorrá um erro no carregamento da imagem.
+. Será inserido a função no Container rederente ao widget que recebe a imagem, e ajustando o erro.
+. Salvando uma imagem padrão no arquivo pubspec.yaml, e definindo como return para caso não tenha nenhuma URL declarada no campo de imagem.
+
+02. Validação e Keyboard.
+
+- Projeto da aula anterior.
+. Disponibilizado em zip o projeto criado na aula anterior. 
+
+- Keyboard type.
+. Adicionando alguns detalhes no projeto.
+. Habilitando o SingleChildScrollView no Container principal fazendo com que tenha um Scroll no projeto, não causando overflow caso seja adicionado 
+mais itens.
+. Será incluido em cada TextFormField o teclado necessário para cada campo, utilizando o parâmetro keyboardtype com o TextInputType, é possível definir 
+se o teclado será tipo texto ou tipo númerico.
+
+- Validações.
+. Adicionando as validações ao projeto.
+. Como impedir que informações vazias sejam adicionadas na nova tarefa do projeto.
+. Utilizando o parâmetro validator para criação das validações para cada TextFormField de acordo com a sua necessidade. 
+. No TextFormField, possui um widget Form que pode ser acoplado todas as validações que verifica todas as validações se estão de acordo ou não.
+. Será feito um wrap with widget, no Scaffold, como um Form e criada uma chave (key) que será a variável criada em State para verificar as validações.
+
+- Para saber mais: Key.
+https://www.youtube.com/watch?v=kn0EOS-ZiIc - Conceito de GlobalKey 
+
+- Novo Widget: Snackbar!
+. Utilizando uma função do Scaffold, que mostra um snackbar e com uma mensagem na tela atual.
+. Inserido na condicional do ElevatedButton.
+
+- Para saber mais: customizando um Snackbar.
+https://dev.to/joaberamone/como-usar-snackbars-em-flutter-4ce - Artigo sobre Snackbar.
+
+03. Navegações e rotas.
+
+- Projeto da aula anterior.
+. Disponibilizado em zip o projeto criado na aula anterior. 
+
+- E se eu quiser mudar de tela?
+. Será feito uma navegação entre a tela inicial onde consta as tarefas e a tela criada no projeto atual de adicionar uma nova tarefa.
+. No flutter possui um widget Navigator, que habilita a navegação entre as telas. 
+. Referente as rotas ou Routes, será o objeto (tela) manipulado pelo Navigator.
+
+- Os vários tipos de Navegação!
+. Existem alguns tipos de Navegações:
+Navegação em Aplicativos:
+. É feito um caminho único, sendo imperativo em formato de pilha.
+. Sendo tela por tela e linear, é conhecida como Navegação direta.
+Navegação em Websites:
+. Possuí caminhos diversos, sendo mais declarativo, tendo mais liberdade na navegação.
+. Sendo complexo ao implementar e conhecido como Navegação 2.0.
+Rotas Anônimas: 
+. É uma das formas mais simples de navegação entre telas. 
+Navigator.push() - Nova tela na pilha, inserindo uma tela em cima da outra. 
+Navigator.pop() - Retira a tela da pilha. 
+Rotas Nomeadas:
+. Rotas mais complexas que podem ser nomeadas, declaradas no MaterialApp.
+Navigator.pushNamed() - Nova pilha de telas a partir do nome declarado.
+. Então cada tela possuirá seu nome respectivo para ter mais liberdade transações de telas, tornando mais organizado.
+
+- Aplicando a navegação direta.
+. Introduzindo a Navegação a partir da tela inicial.
+. Utilizando o arquivo InitialScreen, no floatingActionButton, será inserido o Navigator.push
+. No navigator é utilizado uma transição na routes, conhecido como MaterialPageRoute(), onde será definido o context e mencionado a tela
+que será a próxima da pilha.
+. Inserindo no FormScreen o navigator relacionando o mesmo na tela InitialScreen.
+
+- Para saber mais: navegação direta nomeada.
+https://cursos.alura.com.br/extra/alura-mais/flutter-como-usar-navegacao-nomeada-c1186 - Conteúdo sobre Rotas Nomeadas.
+
+04. Conversa entre Widgets.
+
+- Projeto da aula anterior.
+. Disponibilizado em zip o projeto criado na aula anterior. 
+
+- Um papo sobre estados.
+. Passando as informações adicionadas na tela de Nova Tarefa, para tela Inicial que é a Organização de Tarefas.
+. No Flutter possuí duas denominações para quando se é alterado os estados.
+Ephemeral State - Estado Efêmero.
+. Utilizado apenas por umm único widget, as informações são através dos dependentes.
+App States - Estado do Aplicativo.
+. Atuando com diversos widget, e quanto maior a dependência será mais complexo.
+. Para isso é necessário análisar qual será o estado recomendado para utilizar, qual dado será utilizado? Quem precisa? E quantos widgets será 
+utilizado.
+
+- Novo Widget: Inherited Widget.
+. Widget de heranças, responsável por receber as informações e passar para o widget que é necessário.
+. Criando um novo diretório e um novo arquivo para receber o inheritedwidget.
+. Definindo como TaskInherited, que será manipulado as tarefas ao serem criadas na tela de Nova Tarefa, e incluidas no Organizador.
+. Criando uma variável List denominada as Tasks, incluindo as tarefas já criadas dentro de [] na variável.
+. Será possível manipula-los com facilidade. Criando uma nova função onde poderá ser criado uma nova tarefa.
+. Informando as tarefas já criadas e criando uma newTask, onde será solicitado um nome, uma foto e uma dificuldade para a tarefa que será adicionada.
+
+- Acessando Inherited Widget.
+. updateShouldNotify é responsável por verificar o estado anterior e notifica as alterações.
+. Retirando as task do InitialScreen e no ListView será inserido com o .of(context), mencionando a taskList criada.
+. Na home no arquivo main.dart, será mencionado o arquivo elaborado na aula anterior TaskInherited com child para o arquivo InitialScreen.
+
+- Depende do contexto!
+. O contexto, não altera o valor entre variáveis, mas pode ter funções diferentes.
+. Sendo o local onde a informação se encontra e para guiar é utilizado a árvore de widgets.
+. Sobre a árvore de widgets, é como os parents e child se relacionam.
+
+- Para saber mais: gerenciamento de estados.
+https://dev.to/mjablecnik/most-popular-flutter-state-management-in-2022-3he9 - Artigo Gerenciamento de Estados.
+
+- Finalizando o projeto.
+. Adicionando a tarefa a partir da tela criada, como finalização do projeto.
+. A partir da função newTask será introduzido no arquivo FormScreen.
+. Utilizando o conceito de contexto para incluir as tarefas.
+
+05. Refinando nosso projeto.
+
+- Projeto da aula anterior.
+. Disponibilizado em zip o projeto criado na aula anterior. 
+
+- Um bug! E agora?
+. Bug de adicionar a imagem na tarefa. 
+. No arquivo task.dart será associado o recebimento das imagens assets ou network.
+
+- Como melhorar o nosso projeto?
+. Organizando o projeto, pastas e diretórios.
+. Ajustando os validadores como variáveis booleanas.
+
+- Projeto final do curso.
+. Projeto desenvolvido em curso concluído disponibilizado em zip.
+
+- Desafio.
+Criar um level (nível) global, que seja a soma do Nível de todas as suas tarefas existentes.
+Toda vez que subir de Nível numa tarefa, o level pessoal deve subir também.
+Quanto mais difícil for a tarefa, mais level ganhará.
+Mostre o level na barra superior do aplicativo.

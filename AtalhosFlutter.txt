@@ -1,3 +1,5 @@
+Flutter: Widgets, Stateless, Stateful, Imagens e Animações
+
 IntelliJ - Emulador (Windows)
 VSCode - Emulador Externo (Windows)
 XCode - (macOS)
@@ -53,3 +55,16 @@ build() - Método que facilita a recriação da tela.
 ARGB - Alpha Red Green e Blue.
 Ctrl+Alt+Shift+L - Para ajuste do código.
 Alt+Enter - Seleciona o widget e envolve o mesmo em diversos tipos.
+
+Flutter: Controller, navegação e estados
+
+https://docs.flutter.dev/cookbook/forms/text-input - Documentação referente ao widget de campo de texto.
+https://cursos.alura.com.br/course/flutter-criacao-validacao-formularios-aumentar-conversoes - Curso de Formulários com Flutter Alura.
+https://www.youtube.com/watch?v=kn0EOS-ZiIc - Conceito de GlobalKey.
+https://dev.to/joaberamone/como-usar-snackbars-em-flutter-4ce - Artigo sobre Snackbar.
+https://cursos.alura.com.br/extra/alura-mais/flutter-como-usar-navegacao-nomeada-c1186 - Conteúdo sobre Rotas Nomeadas.
+https://dev.to/mjablecnik/most-popular-flutter-state-management-in-2022-3he9 - Artigo Gerenciamento de Estados.
+
+Navigator.push() - Nova tela na pilha, inserindo uma tela em cima da outra. 
+Navigator.pop() - Retira a tela da pilha. 
+Navigator.pushNamed() - Nova pilha de telas a partir do nome declarado.
